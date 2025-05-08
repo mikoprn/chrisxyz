@@ -1,16 +1,21 @@
 ---
-import '../styles/global.css';
+import { Image } from "astro:assets";
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Homepage">
+	<section aria-labelledby="titleHome">
+		<div class="wrapper-contents home">
+			<h1 id="titleHome" class="text-center">
+				Hello, I'm Astro <br />Welcome to my Blogxyz
+			</h1>
+		</div>
+	</section>
+	<section aria-labelledby="titleBlog">
+		<div class="wrapper-contents blog">
+			<h2 id="titleBlog">Recent Blog Posts</h2>
+			
+		</div>
+	</section>
+</MainLayout>

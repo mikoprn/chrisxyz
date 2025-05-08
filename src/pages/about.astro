@@ -1,0 +1,66 @@
+---
+import headshot from "../assets/headshot.jpg";
+import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import "../styles/global.css";
+---
+
+<MainLayout title="About me">
+    <section aria-labelledby="titleAbout">
+        <div class="wrapper-contents about">
+            <div class="about__contents">
+                <Image
+                    src={headshot}
+                    alt="profil pic"
+                    width="300"
+                    class="about__img"
+                />
+                <article>
+                    <h1 id="titleAbout">My Blogxyz</h1>
+                    <p>
+                        🚀 Passionate developer with a versatile skill set
+                        spanning multiple domains. I thrive on solving complex
+                        challenges across different platforms and environments,
+                        adapting quickly to new technologies and methodologies.
+                        My holistic approach combines technical expertise with
+                        creative problem-solving, allowing me to develop
+                        solutions that are both innovative and practical. I'm
+                        driven by continuous learning and a commitment to
+                        excellence, whether working independently or
+                        collaborating with diverse teams to create impactful,
+                        scalable solutions.
+                    </p>
+                    <a href="mailto:#" class="btn btn-primary">Contact Me</a>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section aria-labelledby="titleframework">
+        <div class="wrapper-contents grid-center gap-2">
+            <h2 id="titleframework" class="text-center">
+                Make your blog shine with Astro<br />
+                 Build the blog you want
+            </h2>
+            <p>
+                Astro is the all-in-one web framework designed for speed. <br />
+                 Pull your content from anywhere and deploy everywhere, <br
+                />all powered by your favorite UI components and libraries.
+            </p>
+        </div>
+    </section>
+</MainLayout>
+
+<style>
+    .about__contents {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: start;
+        gap: var(--clamp-5-base);
+    }
+
+    .about__contents article p {
+        max-width: 43.75rem;
+        margin-block: var(--clamp-2-base) var(--clamp-3-base);
+    }
+</style>

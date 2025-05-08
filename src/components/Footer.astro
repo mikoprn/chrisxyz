@@ -1,0 +1,35 @@
+---
+
+---
+
+<footer>
+    <div class="wrapper-contents footer flex-between-center wrap gap-1">
+        <div>
+            <a href="/" class="logo" title="Back to Home">Blogxyz</a>
+        </div>
+        <p>
+            &copy; <span id="copyright"></span> | All rights reserved | Made by
+            : Miko
+        </p>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        padding-block: 1em;
+        border-top: var(--border);
+    }
+
+    .footer p {
+        font-size: var(--clamp-1-xl);
+    }
+
+    /* 700px  */
+    @media (max-width: 43.75em) {
+        .footer {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+</style>

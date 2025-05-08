@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/global.css";
+---
+
+<MainLayout title="Page Not Found">
+    <section aria-labelledby="pageNotFound">
+        <div class="wrapper-contents pageNotFound grid-center gap-4">
+            <h1 id="pageNotFound" class="text-center h2">
+                Page Not Found <br />Seem to have misplaced something…
+            </h1>
+            <a href="/" class="btn btn-primary">Back to home</a>
+        </div>
+    </section>
+</MainLayout>
+
+<style>
+    .pageNotFound {
+        min-height: 77dvh;
+    }
+
+    /* 700px */
+    @media (max-width: 43.75em) {
+        .pageNotFound {
+            min-height: 68dvh;
+        }
+    }
+</style>
