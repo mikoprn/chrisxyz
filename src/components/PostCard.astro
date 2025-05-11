@@ -1,0 +1,27 @@
+---
+// utils imports
+import { slugify, formatDate } from "../js/utilsBlog";
+import { Image } from "astro:assets";
+const { frontmatter, url, tagType } = Astro.props;
+const Tag = tagType;
+const { title, date, author, image, description, category } = frontmatter;
+---
+
+<article class="postCard">
+    <a href={`/category/${slugify(category)}/`} class="badge">{category}</a>
+    <a href={url} aria-hidden="true" class="postCard__img">
+        <Image src={image.src} alt={image.alt} width="400" height="300"/>
+    </a>
+    <div>
+        <Tag class="h3">
+            <a href={url}>{title}</a>
+        </Tag>
+        <small>
+            by <a href={`/author/${slugify(author)}/`} class="text-small">{author}</a> • {
+                formatDate(date)
+            }
+        </small>
+    </div>
+    <p>{description}</p>
+    <a href={url} class="btn btn-primary postCard__link">Read post</a>
+</article>

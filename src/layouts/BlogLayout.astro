@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import { slugify, formatDate } from "../js/utilsBlog";
+import MainLayout from "./MainLayout.astro";
+import "../styles/blog.css";
+const { frontmatter } = Astro.props;
+const { title, description, date, category, author, image } = frontmatter;
+---
+
+<MainLayout {title} {description}>
+    <article>
+        <section aria-labelledby="titlePost">
+            <div class="wrapper-contents post__heading">
+                <a href={`/category/${slugify(category)}/`} class="badge"
+                    >{category}</a
+                >
+                <h1 id="titlePost" class="h2">{title}</h1>
+                <p>
+                    by <a href={`/author/${slugify(author)}/`}>{author}</a> • {
+                        formatDate(date)
+                    }
+                </p>
+            </div>
+        </section>
+        <section>
+            <div class="wrapper-contents">
+                <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width="1200"
+                    height="600"
+                    class="blog__img"
+                />
+            </div>
+        </section>
+        <section>
+            <div class="wrapper-contents post__content">
+                <slot />
+            </div>
+        </section>
+    </article>
+    <aside></aside>
+</MainLayout>
+
+<style>
+    .post__heading,
+    .post__content {
+        display: grid;
+        place-items: center;
+        gap: var(--clamp-2-base);
+    }
+
+    .post__content {
+        padding-top: 0;
+    }
+</style>

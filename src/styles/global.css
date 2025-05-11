@@ -1,6 +1,6 @@
 :root {
     --light-base: #ffffff;
-    --light-accent: #f5f5f5;
+    --light-accent: #f5f6f9;
     --light-transparent: rgba(255, 255, 255, 0.2);
     --dark-base: #000000;
     --dark-mode: #101010;
@@ -10,6 +10,7 @@
     --danger: #ff0000;
     --blue-700: #1447e6;
     --gray-200: #e5e7eb;
+    --electricLime: #ccff00;
     --indigo-600: #4f46e5;
     --indigo-700: #3945c6;
     --purple-600: #7c3aed;
@@ -192,6 +193,7 @@ small,
 }
 
 img,
+.img,
 svg,
 video {
     max-width: 100%;
@@ -231,13 +233,18 @@ button,
 }
 
 .btn-primary {
-    color: var(--light-base);
-    background-color: var(--indigo-700);
+    color: var(--dark-base);
+    background-color: var(--electricLime);
 }
 
 .btn-secondary {
     color: var(--dark-mode);
     background-color: var(--purple-600);
+}
+
+.btn-dark {
+    color: var(--light-base);
+    background-color: var(--dark-base);
 }
 
 .btn-gradient {
@@ -458,6 +465,10 @@ textarea:focus-visible:invalid {
     height: var(--clamp-1-xl);
 }
 
+.logo:is(:hover, :focus-visible) {
+    color: var(--electricLime);
+}
+
 main,
 .main {
     margin-top: var(--clamp-navbar);
@@ -465,9 +476,9 @@ main,
 }
 
 .wrapper-contents {
-    max-inline-size: min(100% - clamp(.5rem, 5vw, 8rem), 68.75rem);
+    max-inline-size: min(100% - clamp(.5rem, 5vw, 8rem), 75rem);
     margin-inline: auto;
-    padding-block: min(12%, 4rem);
+    padding-block: min(12%, var(--size-4-base));
 }
 
 /* 700px */

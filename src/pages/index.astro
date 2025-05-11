@@ -1,7 +1,15 @@
 ---
-import { Image } from "astro:assets";
+import PostCard from "../components/PostCard.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
+import "../styles/blog.css";
+
+// utils imports
+import { formatBlogPosts } from "../js/utilsBlog";
+const allPosts = await Astro.glob("./blog/*.md");
+const formattedPosts = formatBlogPosts(allPosts, {
+	limit: 3,
+});
 ---
 
 <MainLayout title="Homepage">
@@ -15,7 +23,17 @@ import "../styles/global.css";
 	<section aria-labelledby="titleBlog">
 		<div class="wrapper-contents blog">
 			<h2 id="titleBlog">Recent Blog Posts</h2>
-			
+			<div class="wrapper-posts">
+				{
+					formattedPosts.map((post) => (
+						<PostCard
+							frontmatter={post.frontmatter}
+							url={post.url}
+							tagType="h3"
+						/>
+					))
+				}
+			</div>
 		</div>
 	</section>
 </MainLayout>

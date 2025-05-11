@@ -1,0 +1,56 @@
+.darkmode .postCard {
+    background-color: var(--dark-accent);
+}
+
+/* Blog Page */
+.blog {
+    display: grid;
+    gap: var(--clamp-5-base);
+}
+
+.wrapper-posts {
+    display: grid;
+    place-items: center;
+    place-content: center;
+    gap: var(--clamp-5-base) var(--clamp-3-base);
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+}
+
+.badge {
+    width: fit-content;
+    font-size: var(--size-base-xs);
+    font-weight: var(--fw-medium);
+    line-height: normal;
+    color: var(--light-base);
+    background-color: var(--accent-color-1);
+    padding: 0.5em 1em;
+    border-radius: var(--size-x-small);
+}
+
+/* Post Card Component */
+.postCard {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    gap: var(--clamp-base);
+    padding: 1em;
+    border-radius: var(--size-x-small);
+    color: inherit;
+    background-color: var(--light-base);
+}
+
+.postCard__img img {
+    width: 100%;
+    aspect-ratio: 16/10;
+}
+
+.postCard__link {
+    margin-top: auto;
+}
+
+/* Mobile 768px  */
+@media (max-width: 48em) {
+    .wrapper-posts {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    }
+}
