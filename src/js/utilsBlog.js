@@ -48,4 +48,5 @@ export function formatBlogPosts(posts, {
     return filteredPosts.slice(0, limit);
   }
   return filteredPosts;
+
 }

@@ -1,0 +1,68 @@
+---
+// component imports
+import MainLayout from "../../layouts/MainLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+import CategoryCloud from "../../components/CategoryCloud.astro";
+
+import "../../styles/blog.css";
+
+// utils
+import { slugify, formatBlogPosts } from "../../js/utilsBlog";
+
+export async function getStaticPaths() {
+    return [
+        {
+            params: { category: slugify("Reference Docs") },
+            props: { name: "Reference Docs" },
+        },
+        {
+            params: { category: slugify("General") },
+            props: { name: "General" },
+        },
+        {
+            params: { category: slugify("CSS") },
+            props: { name: "CSS" },
+        },
+        {
+            params: { category: slugify("Astro") },
+            props: { name: "Astro" },
+        },
+    ];
+}
+
+const { category } = Astro.params;
+const { name } = Astro.props;
+
+const allPosts = await Astro.glob("../blog/*.md");
+const formattedPosts = formatBlogPosts(allPosts);
+const categoryPosts = formattedPosts.filter(
+    (post) => slugify(post.frontmatter.category) === category,
+);
+---
+
+<MainLayout title={name}>
+    <section aria-labelledby="titleCategory" aria-label={`Posts about ${name}`}>
+        <div class="wrapper-contents category">
+            <h1 id="titleCategory">
+                Posts about <span class="text-accent">{name}</span>
+            </h1>
+            <div class="post__wrapper">
+                <article class="wrapper-postCard">
+                    {
+                        categoryPosts.map((post) => (
+                            <PostCard
+                                frontmatter={post.frontmatter}
+                                url={post.url}
+                                tagType="h2"
+                            />
+                        ))
+                    }
+                </article>
+                <aside class="blog__categories" aria-label="Blog categories">
+                    <h2 class="h3">Blog Categories</h2>
+                    <CategoryCloud showCount={true} />
+                </aside>
+            </div>
+        </div>
+    </section>
+</MainLayout>

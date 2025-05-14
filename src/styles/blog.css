@@ -3,17 +3,11 @@
 }
 
 /* Blog Page */
-.blog {
+.blog,
+.category,
+.author {
     display: grid;
     gap: var(--clamp-5-base);
-}
-
-.wrapper-posts {
-    display: grid;
-    place-items: center;
-    place-content: center;
-    gap: var(--clamp-5-base) var(--clamp-3-base);
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
 }
 
 .badge {
@@ -21,14 +15,61 @@
     font-size: var(--size-base-xs);
     font-weight: var(--fw-medium);
     line-height: normal;
-    color: var(--light-base);
-    background-color: var(--accent-color-1);
+    color: var(--dark-base);
+    background-color: var(--goldenYellow);
     padding: 0.5em 1em;
     border-radius: var(--size-x-small);
 }
 
+.wrapper-postCard {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    gap: var(--clamp-5-base) var(--clamp-3-base);
+}
+
+.post__heading {
+    display: grid;
+    place-items: center;
+    gap: var(--clamp-2-base);
+}
+
+.post__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: var(--clamp-5-base);
+}
+
+.post__img {
+    margin-inline: auto;
+}
+
+.post__content {
+    flex: 3;
+    display: grid;
+    gap: var(--clamp-2-base);
+}
+
+.blog__categories {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    justify-content: end;
+    gap: var(--clamp-3-base);
+    padding-bottom: min(12%, var(--size-4-base));
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--clamp-2-l) var(--clamp-base);
+}
+
 /* Post Card Component */
 .postCard {
+    width: clamp(16.875rem, 14.911rem + 9.821vw, 23.75rem);
     display: flex;
     flex-direction: column;
     align-self: stretch;
@@ -48,9 +89,17 @@
     margin-top: auto;
 }
 
-/* Mobile 768px  */
+/* 768px  */
 @media (max-width: 48em) {
-    .wrapper-posts {
-        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    .post__wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* 600px */
+@media (max-width: 37.5em) {
+    .postCard {
+        width: 100%;
     }
 }

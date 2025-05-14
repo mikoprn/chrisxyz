@@ -1,0 +1,26 @@
+---
+const { prevUrl, nextUrl } = Astro.props;
+---
+
+<div aria-label="Blog pages" class="pagination__btn-group btn-group">
+    {
+        prevUrl && (
+            <a href="{prevUrl}" class="btn btn-primary">
+                Previous
+            </a>
+        )
+    }
+    {
+        nextUrl && (
+            <a href="{nextUrl}" class="btn btn-primary">
+                Next
+            </a>
+        )
+    }
+</div>
+
+<style>
+    .pagination__btn-group {
+        margin-inline: auto;
+    }
+</style>

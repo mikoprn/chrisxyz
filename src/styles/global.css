@@ -10,6 +10,7 @@
     --danger: #ff0000;
     --blue-700: #1447e6;
     --gray-200: #e5e7eb;
+    --goldenYellow: #ffd700;
     --electricLime: #ccff00;
     --indigo-600: #4f46e5;
     --indigo-700: #3945c6;
@@ -225,16 +226,16 @@ button,
     font-size: var(--size-base);
     font-weight: var(--fw-medium);
     width: fit-content;
-    color: var(--dark-base);
-    background-color: var(--gray-200);
+    color: var(--light-base);
+    background-color: var(--accent-color-1);
     border: none;
     padding: .5em 1.25em;
     border-radius: var(--size-x-small);
 }
 
 .btn-primary {
-    color: var(--dark-base);
-    background-color: var(--electricLime);
+    color: var(--light-base);
+    background-color: var(--blue-700);
 }
 
 .btn-secondary {
@@ -250,6 +251,10 @@ button,
 .btn-gradient {
     color: var(--light-base);
     background-image: var(--gradient);
+}
+
+.btn-group .btn:not(:last-child) {
+    margin-right: var(--clamp-2-base);
 }
 
 /* Form  */
@@ -433,6 +438,10 @@ textarea:focus-visible:invalid {
     -webkit-text-fill-color: transparent;
 }
 
+.text-accent {
+    color: var(--blue-700);
+}
+
 .link {
     color: var(--accent-color-1);
     font-weight: var(--fw-medium);
@@ -466,7 +475,7 @@ textarea:focus-visible:invalid {
 }
 
 .logo:is(:hover, :focus-visible) {
-    color: var(--electricLime);
+    color: var(--blue-700);
 }
 
 main,

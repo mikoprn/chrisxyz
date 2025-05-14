@@ -3,9 +3,8 @@ import PostCard from "../components/PostCard.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 import "../styles/blog.css";
-
-// utils imports
 import { formatBlogPosts } from "../js/utilsBlog";
+
 const allPosts = await Astro.glob("./blog/*.md");
 const formattedPosts = formatBlogPosts(allPosts, {
 	limit: 3,
@@ -23,7 +22,7 @@ const formattedPosts = formatBlogPosts(allPosts, {
 	<section aria-labelledby="titleBlog">
 		<div class="wrapper-contents blog">
 			<h2 id="titleBlog">Recent Blog Posts</h2>
-			<div class="wrapper-posts">
+			<div class="wrapper-postCard">
 				{
 					formattedPosts.map((post) => (
 						<PostCard

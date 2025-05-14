@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { slugify, formatDate } from "../js/utilsBlog";
 import MainLayout from "./MainLayout.astro";
+import CategoryCloud from "../components/CategoryCloud.astro";
 import "../styles/blog.css";
 const { frontmatter } = Astro.props;
 const { title, description, date, category, author, image } = frontmatter;
@@ -9,48 +10,35 @@ const { title, description, date, category, author, image } = frontmatter;
 
 <MainLayout {title} {description}>
     <article>
-        <section aria-labelledby="titlePost">
+        <section aria-labelledby="postTitle">
             <div class="wrapper-contents post__heading">
                 <a href={`/category/${slugify(category)}/`} class="badge"
                     >{category}</a
                 >
-                <h1 id="titlePost" class="h2">{title}</h1>
+                <h1 id="postTitle" class="h2">{title}</h1>
                 <p>
-                    by <a href={`/author/${slugify(author)}/`}>{author}</a> • {
-                        formatDate(date)
-                    }
+                    by <a href={`/author/${slugify(author)}/`}>{author}</a>
+                     • {formatDate(date)}
                 </p>
             </div>
         </section>
+        <Image
+            src={image.src}
+            alt={image.alt}
+            width="1200"
+            height="600"
+            class="post__img"
+        />
         <section>
-            <div class="wrapper-contents">
-                <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width="1200"
-                    height="600"
-                    class="blog__img"
-                />
-            </div>
-        </section>
-        <section>
-            <div class="wrapper-contents post__content">
-                <slot />
+            <div class="wrapper-contents post__wrapper">
+                <div class="post__content">
+                    <slot />
+                </div>
+                <aside class="blog__categories" aria-label="Blog categories">
+                    <h2 id="categoryTitle" class="h3">Blog Categories</h2>
+                    <CategoryCloud />
+                </aside>
             </div>
         </section>
     </article>
-    <aside></aside>
 </MainLayout>
-
-<style>
-    .post__heading,
-    .post__content {
-        display: grid;
-        place-items: center;
-        gap: var(--clamp-2-base);
-    }
-
-    .post__content {
-        padding-top: 0;
-    }
-</style>

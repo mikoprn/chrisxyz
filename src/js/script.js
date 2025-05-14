@@ -1,3 +1,12 @@
+
+const navLinks = document.querySelectorAll("[data-navLink]");
+
+navLinks.forEach((link) => {
+  if (link.getAttribute("href") === window.location.pathname) {
+    link.setAttribute("aria-current", "page");
+  }
+})
+
 // Mobile Navigation
 const menuBtn = document.querySelector(".nav__mobile-btn");
 const navMenu = document.querySelector(".nav__menu");
