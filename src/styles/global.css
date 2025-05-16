@@ -10,11 +10,15 @@
     --danger: #ff0000;
     --blue-700: #1447e6;
     --gray-200: #e5e7eb;
+    --gray-500: #6a7282;
+    /* --gray-400: #99a1af; */
     --goldenYellow: #ffd700;
     --electricLime: #ccff00;
+    --turquoise-color: #2ffec0;
     --indigo-600: #4f46e5;
     --indigo-700: #3945c6;
-    --purple-600: #7c3aed;
+    --purple-600: #9810fa;
+    --purple-700: #8200db;
     --accent-color-1: #2563eb;
     --accent-color-2: #00aaff;
     --gradient: linear-gradient(116deg, var(--accent-color-1), var(--accent-color-2));
@@ -234,13 +238,11 @@ button,
 }
 
 .btn-primary {
-    color: var(--light-base);
     background-color: var(--blue-700);
 }
 
 .btn-secondary {
-    color: var(--dark-mode);
-    background-color: var(--purple-600);
+    background-color: var(--purple-700);
 }
 
 .btn-dark {
@@ -439,7 +441,7 @@ textarea:focus-visible:invalid {
 }
 
 .text-accent {
-    color: var(--blue-700);
+    color: var(--gray-500);
 }
 
 .link {
