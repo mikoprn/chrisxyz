@@ -6,6 +6,7 @@ This project is base on coding-in-public / astro-blog-tutorial in :
 This project still not finish yet, there's a couple issue:
 - Pagination didn't work, maybe because some typo in the code that I type.
 - Decpricated in Astro.glob, so next time need to fix it.
+- RSS feed in page route displayed 404, next will fix it.
 
 -------------------------------------------------------------------------
 
