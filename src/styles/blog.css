@@ -6,6 +6,10 @@
     background-color: var(--dark-accent);
 }
 
+.darkmode .blog__page {
+    background-color: transparent;
+}
+
 .darkmode .blog__related {
     background-color: var(--dark-mode);
 }
@@ -70,6 +74,11 @@
     background-color: var(--light-base);
     padding: 1em;
     border-radius: var(--size-x-small);
+}
+
+.blog__page {
+    max-width: 100%;
+    background-color: transparent;
 }
 
 .blog__category,
