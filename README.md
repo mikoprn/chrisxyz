@@ -1,3 +1,10 @@
+# Noted: 
+This project is still not finish, there's a couple issue:
+- Pagination didn't work.
+- Decpricated in Astro.glob, so next time need to fix it.
+
+-------------------------------------------------------------------------
+
 # Astro Starter Kit: Minimal
 
 ```sh
