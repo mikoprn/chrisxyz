@@ -1,3 +1,14 @@
+# Noted : 
+This project is base on coding-in-public / astro-blog-tutorial in :
+- YouTube Astro Blog Course playlist : https://youtube.com/playlist?list=PLoqZcxvpWzzeRwF8TEpXHtO7KYY6cNJeF
+- Github : https://github.com/coding-in-public/astro-blog-tutorial
+
+This project still not finish yet, there's a couple issue:
+- Pagination didn't work, maybe because some typo in the code that I type.
+- Decpricated in Astro.glob, so next time need to fix it.
+
+-------------------------------------------------------------------------
+
 # Astro Starter Kit: Minimal
 
 ```sh
