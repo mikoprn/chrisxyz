@@ -8,7 +8,7 @@ export function GET(context) {
         stylesheet: '/rss/styles.xsl',
         title: 'my astro blog',
         description: 'A humble Astronaut guide to the stars',
-        site: context.site,
+        site: import.meta.env.SITE,
         items: posts.map((post) => ({
             link: post.url,
             title: post.frontmatter.title,
